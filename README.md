@@ -148,16 +148,6 @@ docker compose exec backend python manage.py run_dbt
 - ✅ Upload UI — drag-and-drop de CSV/JSON com ingestão automática
 - ✅ Autocomplete de tabelas e colunas no Query Agent
 - ✅ Lineage visual (DAG do dbt a partir do manifest.json)
-- [ ] Scheduling de ingestão via Celery Beat
-- [ ] Data quality checks automatizados (dbt tests + alertas)
-- [ ] Export de resultados para CSV/Parquet/Excel
-- [ ] Suporte a Excel e Google Sheets
-
----
-
-## 📄 Licença
-
-MIT
 
 ---
 
@@ -165,6 +155,6 @@ MIT
 
 Desenvolvido por **Daniel Pizani** · 2026
 
-Django · dbt Core · DuckDB · Ollama · Claude API · React
+Django · dbt Core · DuckDB · Ollama · React
 
 </div>
