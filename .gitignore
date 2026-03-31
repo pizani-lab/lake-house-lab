@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Django
+*.sqlite3
+staticfiles/
+*.log
+
+# Testes
+.pytest_cache/
+
+# Frontend
+node_modules/
+.vite/
+frontend/dist/
+
+# Editores / OS
+.env
+.env.local
+.idea/
+.vscode/
+.claude/
+*.swp
+.DS_Store
+
+# Dados lakehouse (Parquet, DuckDB)
+/data/
+*.duckdb
+*.duckdb.wal
+*.parquet
+
+# dbt
+/dbt_project/
+
+# Memória do Claude Code (não pertence ao repositório)
+/memory/
+
