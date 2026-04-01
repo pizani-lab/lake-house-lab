@@ -14,7 +14,7 @@ staticfiles/
 .pytest_cache/
 
 # Frontend
-node_modules/
+/node_modules/
 .vite/
 frontend/dist/
 
@@ -24,6 +24,8 @@ frontend/dist/
 .idea/
 .vscode/
 .claude/
+.cline/
+.directory
 *.swp
 .DS_Store
 
@@ -32,10 +34,11 @@ frontend/dist/
 *.duckdb
 *.duckdb.wal
 *.parquet
-
+*.sh
 # dbt
 /dbt_project/
 
 # Memória do Claude Code (não pertence ao repositório)
 /memory/
 
+/.cursor/rules/vizvibe.mdc

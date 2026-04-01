@@ -1,0 +1,71 @@
+flowchart TD
+    %% === OBJETIVOS DO PROJETO ===
+    %% Objetivo final: Lakehouse local completo com ingestão, transformação e consumo analítico por linguagem natural.
+    %% Objetivo atual: Consolidar contexto do projeto no VizVibe e guiar os próximos marcos do roadmap.
+
+    %% === NÓS ===
+    %% @project_start [start, closed, 2026-04-01, user]
+    project_start("Início do LakeHouse Lab<br/><sub>Projeto criado para demonstrar<br/>arquitetura lakehouse local com<br/>camadas bronze, silver e gold<br/>baseadas em arquivos Parquet</sub>")
+
+    %% @core_architecture [ai-task, closed, 2026-04-01, user]
+    core_architecture("Arquitetura Base Definida<br/><sub>Pipeline estabelecido com ingestão,<br/>transformações via dbt Core e<br/>consulta analítica com DuckDB<br/>conforme documentação principal</sub>")
+
+    %% @nl_sql_agent [ai-task, closed, 2026-04-01, user]
+    nl_sql_agent("Agente Text-to-SQL Entregue<br/><sub>Fluxo de pergunta em linguagem<br/>natural convertido para SQL com<br/>suporte a Anthropic e Ollama<br/>integrado ao backend e frontend</sub>")
+
+    %% @react_dashboard [ai-task, closed, 2026-04-01, user]
+    react_dashboard("Dashboard React Publicado<br/><sub>Interface com barra de consulta,<br/>resultado tabular, visualização e<br/>autocomplete de tabelas e colunas<br/>para acelerar análise exploratória</sub>")
+
+    %% @vizvibe_setup [ai-task, closed, 2026-04-01, assistant]
+    vizvibe_setup("Setup Inicial do VizVibe<br/><sub>Mapa de trajetória configurado em<br/>Mermaid para preservar contexto,<br/>decisões e próximos passos de<br/>evolução do LakeHouse Lab</sub>")
+
+    %% @schedule_ingestion [ai-task, opened, 2026-04-01, user]
+    schedule_ingestion("Agendamento de Ingestão<br/><sub>Adicionar execução recorrente com<br/>Celery Beat para automatizar carga<br/>de novas fontes e reduzir tarefas<br/>manuais de atualização de dados</sub>")
+
+    %% @data_quality_alerts [ai-task, opened, 2026-04-01, user]
+    data_quality_alerts("Qualidade de Dados e Alertas<br/><sub>Automatizar validações com dbt test<br/>e criar alertas para anomalias de<br/>qualidade, esquema e integridade<br/>nas camadas do lakehouse</sub>")
+
+    %% @export_results [ai-task, opened, 2026-04-01, user]
+    export_results("Exportação de Resultados<br/><sub>Implementar export para CSV,<br/>Parquet e Excel a partir das<br/>consultas para ampliar o consumo<br/>dos dados fora da aplicação</sub>")
+
+    %% @sheets_excel_support [ai-task, opened, 2026-04-01, user]
+    sheets_excel_support("Suporte a Planilhas Externas<br/><sub>Incluir ingestão de Excel e Google<br/>Sheets como novas fontes para<br/>expandir cobertura de uso do<br/>projeto em cenários reais</sub>")
+
+    %% @ultimate_goal [end, opened, 2026-04-01, user]
+    ultimate_goal("Lakehouse Local de Referência<br/><sub>Consolidar uma plataforma ponta a<br/>ponta para engenharia e analytics<br/>com experiência fluida de pergunta<br/>natural até insight acionável</sub>")
+
+    %% === CONEXÕES ===
+    project_start --> core_architecture
+    core_architecture --> nl_sql_agent
+    core_architecture --> react_dashboard
+    react_dashboard --> vizvibe_setup
+
+    vizvibe_setup --> schedule_ingestion
+    vizvibe_setup --> data_quality_alerts
+    vizvibe_setup --> export_results
+    vizvibe_setup --> sheets_excel_support
+
+    schedule_ingestion -.-> ultimate_goal
+    data_quality_alerts -.-> ultimate_goal
+    export_results -.-> ultimate_goal
+    sheets_excel_support -.-> ultimate_goal
+
+    %% === RECENTE ===
+    subgraph recent [RECENTE]
+        vizvibe_setup
+    end
+
+    %% === ESTILOS ===
+    style project_start fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style core_architecture fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style nl_sql_agent fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style react_dashboard fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+
+    style vizvibe_setup fill:#2d1f4e,stroke:#c084fc,color:#e9d5ff,stroke-width:2px
+    style recent fill:transparent,stroke:#c084fc,color:#c084fc,stroke-width:2px,stroke-dasharray:5 5
+
+    style schedule_ingestion fill:#1a1a2e,stroke:#4ade80,color:#86efac,stroke-width:1px
+    style data_quality_alerts fill:#1a1a2e,stroke:#4ade80,color:#86efac,stroke-width:1px
+    style export_results fill:#1a1a2e,stroke:#4ade80,color:#86efac,stroke-width:1px
+    style sheets_excel_support fill:#1a1a2e,stroke:#4ade80,color:#86efac,stroke-width:1px
+    style ultimate_goal fill:#1a1a2e,stroke:#4ade80,color:#86efac,stroke-width:1px
